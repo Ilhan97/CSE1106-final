@@ -51,11 +51,11 @@ int main(void)
         total = total + temperature;
 
         if (temperature < minimum || temperature > maximum) {
-            printf("WARNING - LED ON\n");
+            printf("%-12.1f %-15s %s\n", temperature, "WARNING", "ON");
             gpioWrite(PIN, 1);
             fprintf(file, "%.1f F - WARNING\n", temperature);
         } else {
-            printf("NORMAL - LED OFF\n");
+            printf("%-12.1f %-15s %s\n", temperature, "NORMAL", "OFF");
             gpioWrite(PIN, 0);
             fprintf(file, "%.1f F - NORMAL\n", temperature);
         }
